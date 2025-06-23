@@ -14,19 +14,15 @@ class FileController extends Controller
 
     public function storeToStorage(Request $request)
     {
-        // Validate the uploaded file
         $valid = $request->validate([
             'uploadFile' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
     
-        // Store the file in the 'public/file-uploads' directory
         $file = $request->file('uploadFile');
-        $path = $file->store('file-uploads', 'public'); // Ensure 'public' disk is used
+        $path = $file->store('file-uploads', 'public'); 
     
-        // Generate the public URL for the stored file
         $url = Storage::url($path);
     
-        // Pass the URL to the view
         return view('products.upload')->with(compact('url'));
     }
 }

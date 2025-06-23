@@ -13,7 +13,6 @@
                     <a href="{{ route('products.index') }}" class="btn btn-primary btn-sm">&larr; Back</a>
                 </div>
             </div>
-
             <div class="card-body">
 
                 <div class="row">
@@ -62,7 +61,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="row">
-                        <img src="{{ Storage::url($product->imageurl) }}" alt="" style="height:65%; width:65%">
+                        <img src="{{ asset($product->imageurl) }}" alt="Product Image" style="height:65%; width:65%">    
                     </div>
                 </div>
 
